@@ -1,5 +1,5 @@
 #include <iostream>
-
+#include "battle.hpp"
 using namespace std;
 
 int main()

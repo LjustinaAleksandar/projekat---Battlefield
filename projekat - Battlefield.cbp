@@ -32,20 +32,21 @@
 			<Add option="-Wall" />
 			<Add option="-fexceptions" />
 		</Compiler>
-		<Unit filename="army.h" />
-		<Unit filename="assault.h" />
-		<Unit filename="battle.h" />
+		<Unit filename="army.hpp" />
+		<Unit filename="assault.hpp" />
+		<Unit filename="battle.hpp" />
 		<Unit filename="main.cpp" />
-		<Unit filename="medic.h" />
-		<Unit filename="pilot.h" />
-		<Unit filename="plane.h" />
-		<Unit filename="primary.h" />
-		<Unit filename="recon.h" />
-		<Unit filename="secondary.h" />
-		<Unit filename="squad.h" />
-		<Unit filename="support.h" />
-		<Unit filename="tank.h" />
-		<Unit filename="tanker.h" />
+		<Unit filename="medic.hpp" />
+		<Unit filename="pilot.hpp" />
+		<Unit filename="plane.hpp" />
+		<Unit filename="primary.hpp" />
+		<Unit filename="recon.hpp" />
+		<Unit filename="secondary.hpp" />
+		<Unit filename="soilder.hpp" />
+		<Unit filename="squad.hpp" />
+		<Unit filename="support.hpp" />
+		<Unit filename="tank.hpp" />
+		<Unit filename="tanker.hpp" />
 		<Extensions>
 			<code_completion />
 			<envvars />

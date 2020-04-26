@@ -1,11 +1,11 @@
-#ifndef RECON_H_INCLUDED
-#define RECON_H_INCLUDED
+#ifndef MEDIC_HPP_INCLUDED
+#define MEDIC_HPP_INCLUDED
 #include <iostream>
-#include "primary.h"
-#include "secondary.h"
+#include "primary.hpp"
+#include "secondary.hpp"
 
 using namespace std;
-class Recon{
+class Medic{
     private:
         string name;
         string armyRank;
@@ -14,8 +14,9 @@ class Recon{
         string gadget1;
         string gadget2;
         string grenade;
-        bool sniper;
-        bool pathfinder;
+        bool healer;
+        bool combatMedic;
 };
 
-#endif // RECON_H_INCLUDED
+
+#endif // MEDIC_HPP_INCLUDED

@@ -1,5 +1,5 @@
-#ifndef TANK_H_INCLUDED
-#define TANK_H_INCLUDED
+#ifndef TANK_HPP_INCLUDED
+#define TANK_HPP_INCLUDED
 #include <iostream>
 
 using namespace std;
@@ -15,4 +15,5 @@ class Tank{
         string skin;
 };
 
-#endif // TANK_H_INCLUDED
+
+#endif // TANK_HPP_INCLUDED

@@ -1,7 +1,7 @@
-#ifndef BATTLE_H_INCLUDED
-#define BATTLE_H_INCLUDED
+#ifndef BATTLE_HPP_INCLUDED
+#define BATTLE_HPP_INCLUDED
 #include <iostream>
-#include "army.h"
+#include "army.hpp"
 
 using namespace std;
 class Battle{
@@ -12,4 +12,4 @@ class Battle{
         int deaths;
 };
 
-#endif // BATTLE_H_INCLUDED
+#endif // BATTLE_HPP_INCLUDED

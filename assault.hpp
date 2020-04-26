@@ -1,8 +1,8 @@
-#ifndef ASSAULT_H_INCLUDED
-#define ASSAULT_H_INCLUDED
+#ifndef ASSAULT_HPP_INCLUDED
+#define ASSAULT_HPP_INCLUDED
 #include <iostream>
-#include "primary.h"
-#include "secondary.h"
+#include "primary.hpp"
+#include "secondary.hpp"
 
 using namespace std;
 class Assault{
@@ -18,4 +18,4 @@ class Assault{
         bool antiInfantry;
 };
 
-#endif // ASSAULT_H_INCLUDED
+#endif // ASSAULT_HPP_INCLUDED

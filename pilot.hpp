@@ -1,21 +1,21 @@
-#ifndef MEDIC_H_INCLUDED
-#define MEDIC_H_INCLUDED
+#ifndef PILOT_HPP_INCLUDED
+#define PILOT_HPP_INCLUDED
 #include <iostream>
-#include "primary.h"
-#include "secondary.h"
+#include "primary.hpp"
+#include "secondary.hpp"
+#include "plane.hpp"
 
 using namespace std;
-class Medic{
+class Pilot{
     private:
         string name;
         string armyRank;
+        Plane plane1;
         Primary weapon1;
         Secondary weapon2;
         string gadget1;
         string gadget2;
-        string grenade;
-        bool healer;
-        bool combatMedic;
 };
 
-#endif // MEDIC_H_INCLUDED
+
+#endif // PILOT_HPP_INCLUDED

@@ -1,5 +1,5 @@
-#ifndef PLANE_H_INCLUDED
-#define PLANE_H_INCLUDED
+#ifndef PLANE_HPP_INCLUDED
+#define PLANE_HPP_INCLUDED
 #include <iostream>
 
 using namespace std;
@@ -13,4 +13,6 @@ class Plane{
         planeWPN weapon2;
         string skin;
 };
-#endif // PLANE_H_INCLUDED
+
+
+#endif // PLANE_HPP_INCLUDED

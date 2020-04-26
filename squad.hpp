@@ -1,10 +1,10 @@
-#ifndef SQUAD_H_INCLUDED
-#define SQUAD_H_INCLUDED
+#ifndef SQUAD_HPP_INCLUDED
+#define SQUAD_HPP_INCLUDED
 #include <iostream>
-#include "assault.h"
-#include "medic.h"
-#include "support.h"
-#include "recon.h"
+#include "assault.hpp"
+#include "medic.hpp"
+#include "support.hpp"
+#include "recon.hpp"
 
 using namespace std;
 class Squad{
@@ -16,4 +16,5 @@ class Squad{
         Recon recon1;
 };
 
-#endif // SQUAD_H_INCLUDED
+
+#endif // SQUAD_HPP_INCLUDED

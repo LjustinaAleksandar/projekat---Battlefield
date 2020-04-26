@@ -1,9 +1,9 @@
-#ifndef ARMY_H_INCLUDED
-#define ARMY_H_INCLUDED
+#ifndef ARMY_HPP_INCLUDED
+#define ARMY_HPP_INCLUDED
 #include <iostream>
-#include "squad.h"
-#include "tanker.h"
-#include "pilot.h"
+#include "squad.hpp"
+#include "tanker.hpp"
+#include "pilot.hpp"
 
 using namespace std;
 enum COUNTRIES {Serbia, France, Germany, UnitedKingdom, Russia, AustriaHungary, Turkey, Italy, USA, Canada, Australia};
@@ -16,4 +16,4 @@ class Army{
         int number;
 };
 
-#endif // ARMY_H_INCLUDED
+#endif // ARMY_HPP_INCLUDED
