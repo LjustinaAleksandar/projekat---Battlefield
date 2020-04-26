@@ -1,21 +1,22 @@
 #ifndef MEDIC_HPP_INCLUDED
 #define MEDIC_HPP_INCLUDED
 #include <iostream>
-#include "primary.hpp"
-#include "secondary.hpp"
+#include "soilder.hpp"
 
 using namespace std;
-class Medic{
+class Medic: public Soilder{
     private:
-        string name;
-        string armyRank;
-        Primary weapon1;
-        Secondary weapon2;
         string gadget1;
         string gadget2;
-        string grenade;
         bool healer;
         bool combatMedic;
+    public:
+        Medic(): Soilder("", "", frag){
+            gadget1="";
+            gadget2="";
+            healer=false;
+            combatMedic=false;
+        }
 };
 
 
