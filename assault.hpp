@@ -17,6 +17,12 @@ class Assault: public Soilder{
             antiTank=false;
             antiInfantry=false;
         }
+        Assault(): Soilder("", "", frag){
+            gadget1="";
+            gadget2="";
+            antiTank=false;
+            antiInfantry=false;
+        }
 };
 
 #endif // ASSAULT_HPP_INCLUDED
