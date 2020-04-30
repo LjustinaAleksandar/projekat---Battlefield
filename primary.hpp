@@ -1,6 +1,8 @@
 #ifndef PRIMARY_H_INCLUDED
 #define PRIMARY_H_INCLUDED
 #include <iostream>
+#include <stdlib.h>
+
 
 using namespace std;
 enum FIREMOD {single, burst, automatic};
@@ -76,6 +78,28 @@ class Primary{
         void setFMOD(FIREMOD f) {fMod=f;}
         void setROF(int r) {ROF=r;}
         void setDMG(int d) {dmg=d;}
+
+        void ChangeFireMode(FIREMOD fm){
+        fMod=fm;
+        }
+
+        void fire(int num)
+        {
+            int a;
+            if(num<=magSize)
+            {
+                magSize=magSize-num;
+                ammo=ammo-num;
+            }
+            else
+            {
+                a=magSize;
+                magSize=magSize-num;
+                Sleep(500);
+                ammo=ammo-num;
+                magSize=a;
+            }
+        }
 };
 
 #endif // PRIMARY_H_INCLUDED

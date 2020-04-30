@@ -19,8 +19,12 @@ class Soilder{
         armyRank="";
         grenade=frag;
         }
-        Soilder(string nam, string rnk, GRENADE grn, const Primary &prim1):
-        {}
+        Soilder(string nam, string rnk, GRENADE grn, const Primary &prim1, const Secondary &sec1): weapo1(prim1),weapon2(sec1)
+        {
+        name=nam;
+        armyRank=rnk;
+        grenade=grn;
+        }
 };
 
 
