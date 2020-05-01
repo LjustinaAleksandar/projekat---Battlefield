@@ -2,7 +2,7 @@
 #define PRIMARY_H_INCLUDED
 #include <iostream>
 #include <stdlib.h>
-
+#include <windows.h>
 
 using namespace std;
 enum FIREMOD {single, burst, automatic};

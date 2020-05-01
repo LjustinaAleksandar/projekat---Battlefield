@@ -11,17 +11,11 @@ class Assault: public Soilder{
         bool antiTank;
         bool antiInfantry;
     public:
-        Assault(): Soilder("", "", frag){
-            gadget1="";
-            gadget2="";
-            antiTank=false;
-            antiInfantry=false;
-        }
-        Assault(): Soilder("", "", frag){
-            gadget1="";
-            gadget2="";
-            antiTank=false;
-            antiInfantry=false;
+        Assault(string nam, string rnk, GRENADE grn, const Primary &prim1, const Secondary &sec1, string g1, string g2, bool AT, bool AI): Soilder(nam, rnk, grn, &prim1, &sec1){
+            gadget1=g1;
+            gadget2=g2;
+            antiTank=AT;
+            antiInfantry=AI;
         }
 };
 
