@@ -1,0 +1,2 @@
+nagant_revolver,6,36,150,46,2,rasputin
+nagant_revolver,6,36,150,46,2,rasputin

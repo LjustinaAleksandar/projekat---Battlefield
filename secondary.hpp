@@ -1,6 +1,8 @@
 #ifndef SECONDARY_HPP_INCLUDED
 #define SECONDARY_HPP_INCLUDED
 #include <iostream>
+#include <fstream>
+#include <cstdlib>
 
 using namespace std;
 class Secondary{
@@ -56,6 +58,41 @@ class Secondary{
         void setSKIN(string s) {skin=s;}
         void setROF(int r) {ROF=r;}
         void setDMG(int d) {dmg=d;}
+
+        void pisiTxt(string nazivFajla, char mode='a')
+{
+    ofstream fajl;
+
+    if (mode=='a'){
+        fajl.open (nazivFajla, ios_base::app);
+    }
+    else{
+        fajl.open (nazivFajla);
+    }
+
+    fajl << name<<","<< magSize<<","<<ammo<<","<<ROF<<","<<dmg<<","<<magnification<<","<<skin << endl;
+
+    fajl.close();
+
+}
+
+void citajTxt(string nazivFajla)
+{
+    string linija;
+    ifstream fajl (nazivFajla);
+    if (fajl.is_open())
+    {
+        while ( getline (fajl,linija) )
+        {
+            cout << linija << '\n';
+        }
+        fajl.close();
+    }
+
+    else
+        cout << "Neuspesno otvoren fajl";
+
+}
 };
 
 

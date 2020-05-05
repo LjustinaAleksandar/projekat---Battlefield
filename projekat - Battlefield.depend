@@ -1,7 +1,9 @@
 # depslib dependency file v1.0
-1587921044 source:c:\users\sale secerko\onedrive\desktop\projekat - battlefield\main.cpp
+1588707373 source:c:\users\sale secerko\onedrive\desktop\projekat - battlefield\main.cpp
 	<iostream>
+	<fstream>
 	"battle.hpp"
+	"secondary.hpp"
 
 1587921326 c:\users\sale secerko\onedrive\desktop\projekat - battlefield\battle.hpp
 	<iostream>
@@ -20,30 +22,34 @@
 	"support.hpp"
 	"recon.hpp"
 
-1588271353 c:\users\sale secerko\onedrive\desktop\projekat - battlefield\assault.hpp
+1588706310 c:\users\sale secerko\onedrive\desktop\projekat - battlefield\assault.hpp
 	<iostream>
 	"soilder.hpp"
 
-1588273814 c:\users\sale secerko\onedrive\desktop\projekat - battlefield\primary.hpp
+1588370618 c:\users\sale secerko\onedrive\desktop\projekat - battlefield\primary.hpp
 	<iostream>
+	<stdlib.h>
+	<windows.h>
 
-1587925679 c:\users\sale secerko\onedrive\desktop\projekat - battlefield\secondary.hpp
+1588706887 c:\users\sale secerko\onedrive\desktop\projekat - battlefield\secondary.hpp
 	<iostream>
+	<fstream>
+	<cstdlib>
 
-1587928856 c:\users\sale secerko\onedrive\desktop\projekat - battlefield\medic.hpp
+1588706379 c:\users\sale secerko\onedrive\desktop\projekat - battlefield\medic.hpp
 	<iostream>
 	"soilder.hpp"
 
-1587928215 c:\users\sale secerko\onedrive\desktop\projekat - battlefield\support.hpp
+1588706352 c:\users\sale secerko\onedrive\desktop\projekat - battlefield\support.hpp
 	<iostream>
 	"soilder.hpp"
 
-1588272021 c:\users\sale secerko\onedrive\desktop\projekat - battlefield\soilder.hpp
+1588372078 c:\users\sale secerko\onedrive\desktop\projekat - battlefield\soilder.hpp
 	<iostream>
 	"primary.hpp"
 	"secondary.hpp"
 
-1587928862 c:\users\sale secerko\onedrive\desktop\projekat - battlefield\recon.hpp
+1588706394 c:\users\sale secerko\onedrive\desktop\projekat - battlefield\recon.hpp
 	<iostream>
 	"soilder.hpp"
 

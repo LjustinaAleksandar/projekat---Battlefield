@@ -42,6 +42,7 @@
 		<Unit filename="primary.hpp" />
 		<Unit filename="recon.hpp" />
 		<Unit filename="secondary.hpp" />
+		<Unit filename="secondary1.txt" />
 		<Unit filename="soilder.hpp" />
 		<Unit filename="squad.hpp" />
 		<Unit filename="support.hpp" />
