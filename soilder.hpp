@@ -4,7 +4,6 @@
 #include "primary.hpp"
 #include "secondary.hpp"
 
-using namespace std;
 enum GRENADE{frag,gas,impact,incendinary,smoke,mini,lightAT,improvised};
 class Soilder{
     protected:
@@ -13,6 +12,7 @@ class Soilder{
         Primary weapon1;
         Secondary weapon2;
         GRENADE grenade;
+        static int soilderCount;
     public:
         Soilder(): weapon1(0, "", trench, 1, 1.0, "", false, single, 1, 1), weapon2(0, "", 1, 1.0, "", 1, 1){
         name="";
@@ -24,6 +24,7 @@ class Soilder{
         name=nam;
         armyRank=rnk;
         grenade=grn;
+        {soilderCount++;}
         }
         Soilder(const Soilder& s1){
         name=s1.name;
@@ -32,6 +33,7 @@ class Soilder{
         weapon2=s1.weapon2;
         grenade=s1.grenade;
         }
+        void writeSoilderCount(){std::cout << soilderCount <<std::endl;}
 };
 
 

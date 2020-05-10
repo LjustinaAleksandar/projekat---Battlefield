@@ -3,7 +3,6 @@
 #include <iostream>
 #include "soilder.hpp"
 
-using namespace std;
 class Assault: public Soilder{
     private:
         string gadget1;

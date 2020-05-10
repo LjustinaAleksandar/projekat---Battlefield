@@ -2,7 +2,6 @@
 #define TANK_HPP_INCLUDED
 #include <iostream>
 
-using namespace std;
 enum tankWPN {antiInfantry, antiTank, antiAir};
 class Tank{
     private:

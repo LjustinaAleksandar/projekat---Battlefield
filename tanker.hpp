@@ -5,7 +5,6 @@
 #include "secondary.hpp"
 #include "tank.hpp"
 
-using namespace std;
 class Tanker{
     private:
         string name;

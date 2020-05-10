@@ -1,10 +1,45 @@
 #include <iostream>
 #include <fstream>
+using namespace std;
 #include "battle.hpp"
 #include "secondary.hpp"
+#include "soilder.hpp"
 
-using namespace std;
-
+ostream& operator<<( const Plane& plane1){
+            std::cout << plane1.name << std::endl;
+            std::cout << plane1.seats << std::endl;
+            std::cout << plane1.skin << std::endl;
+            switch (plane1.type){
+                case 0: std::cout << "attack" << std::endl;
+                        break;
+                case 1: std::cout << "bomber" << std::endl;
+                        break;
+                case 2: std::cout << "fighter" << std::endl;
+                        break;
+                case 3: std::cout << "heavy" << std::endl;
+                        break;
+                }
+            switch (plane1.weapon1){
+                case 0: std::cout << "rockets" << std::endl;
+                        break;
+                case 1: std::cout << "machinegun" << std::endl;
+                        break;
+                case 2: std::cout << "infantryBombs" << std::endl;
+                        break;
+                case 3: std::cout << "tankBombs" << std::endl;
+                        break;
+                }
+            switch (plane1.weapon2){
+                case 0: std::cout << "rockets" << std::endl;
+                        break;
+                case 1: std::cout << "machinegun" << std::endl;
+                        break;
+                case 2: std::cout << "infantryBombs" << std::endl;
+                        break;
+                case 3: std::cout << "tankBombs" << std::endl;
+                        break;
+                }}
+int Soilder::soilderCount=0;
 
 int main ()
 {

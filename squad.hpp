@@ -6,7 +6,6 @@
 #include "support.hpp"
 #include "recon.hpp"
 
-using namespace std;
 class Squad{
     private:
         string name;

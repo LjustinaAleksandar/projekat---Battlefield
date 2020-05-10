@@ -3,7 +3,6 @@
 #include <iostream>
 #include "soilder.hpp"
 
-using namespace std;
 class Support: public Soilder{
     private:
         string gadget1;

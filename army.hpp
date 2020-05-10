@@ -5,7 +5,6 @@
 #include "tanker.hpp"
 #include "pilot.hpp"
 
-using namespace std;
 enum COUNTRIES {Serbia, France, Germany, UnitedKingdom, Russia, AustriaHungary, Turkey, Italy, USA, Canada, Australia};
 class Army{
     private:

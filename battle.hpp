@@ -3,7 +3,6 @@
 #include <iostream>
 #include "army.hpp"
 
-using namespace std;
 class Battle{
     private:
         string name;

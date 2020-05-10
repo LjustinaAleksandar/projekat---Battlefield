@@ -5,7 +5,6 @@
 #include "secondary.hpp"
 #include "plane.hpp"
 
-using namespace std;
 class Pilot{
     private:
         string name;
@@ -15,6 +14,8 @@ class Pilot{
         Secondary weapon2;
         string gadget1;
         string gadget2;
+    public:
+
 };
 
 
