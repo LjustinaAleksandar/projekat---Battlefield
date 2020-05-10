@@ -4,17 +4,19 @@
 #include <fstream>
 #include <cstdlib>
 
-class Secondary{
-    protected:
-        string name;
-        int magSize;
-        int ammo;
-        int ROF;
-        int dmg;
-        float magnification;
-        string skin;
-    public:
-        Secondary(){
+class Secondary
+{
+protected:
+    string name;
+    int magSize;
+    int ammo;
+    int ROF;
+    int dmg;
+    float magnification;
+    string skin;
+public:
+    Secondary()
+    {
         ammo=0;
         dmg=0;
         magnification=1.0;
@@ -22,8 +24,9 @@ class Secondary{
         name="";
         ROF=1;
         skin="";
-        }
-        Secondary(int a, string n, int mag, float m, string s, int r, int d){
+    }
+    Secondary(int a, string n, int mag, float m, string s, int r, int d)
+    {
         ammo=a;
         dmg=d;
         magnification=m;
@@ -31,8 +34,9 @@ class Secondary{
         name=n;
         ROF=r;
         skin=s;
-        }
-        Secondary(const Secondary& sec1){
+    }
+    Secondary(const Secondary& sec1)
+    {
         ammo=sec1.ammo;
         dmg=sec1.dmg;
         magnification=sec1.magnification;
@@ -40,58 +44,113 @@ class Secondary{
         name=sec1.name;
         ROF=sec1.ROF;
         skin=sec1.skin;
-        }
-
-        int getAMMO() const {return ammo;}
-        string getNAME() const {return name;}
-        int getMAGSIZE() const {return magSize;}
-        float getMAGNIFICAATION() const {return magnification;}
-        string getSKIN() const {return skin;}
-        int getROF() const {return ROF;}
-        int getDMG() const {return dmg;}
-
-        void setAMMO(int a) {ammo=a;}
-        void setNAME(string n) {name=n;}
-        void setMAGSIZE(int mag) {magSize=mag;}
-        void setMAGNIFICAATION(float m) {magnification=m;}
-        void setSKIN(string s) {skin=s;}
-        void setROF(int r) {ROF=r;}
-        void setDMG(int d) {dmg=d;}
-
-        void pisiTxt(string nazivFajla, char mode='a')
-{
-    ofstream fajl;
-
-    if (mode=='a'){
-        fajl.open (nazivFajla, ios_base::app);
-    }
-    else{
-        fajl.open (nazivFajla);
     }
 
-    fajl << name<<","<< magSize<<","<<ammo<<","<<ROF<<","<<dmg<<","<<magnification<<","<<skin << endl;
-
-    fajl.close();
-
-}
-
-void citajTxt(string nazivFajla)
-{
-    string linija;
-    ifstream fajl (nazivFajla);
-    if (fajl.is_open())
+    int getAMMO() const
     {
-        while ( getline (fajl,linija) )
-        {
-            cout << linija << '\n';
-        }
-        fajl.close();
+        return ammo;
+    }
+    string getNAME() const
+    {
+        return name;
+    }
+    int getMAGSIZE() const
+    {
+        return magSize;
+    }
+    float getMAGNIFICAATION() const
+    {
+        return magnification;
+    }
+    string getSKIN() const
+    {
+        return skin;
+    }
+    int getROF() const
+    {
+        return ROF;
+    }
+    int getDMG() const
+    {
+        return dmg;
     }
 
-    else
-        cout << "Neuspesno otvoren fajl";
+    void setAMMO(int a)
+    {
+        ammo=a;
+    }
+    void setNAME(string n)
+    {
+        name=n;
+    }
+    void setMAGSIZE(int mag)
+    {
+        magSize=mag;
+    }
+    void setMAGNIFICAATION(float m)
+    {
+        magnification=m;
+    }
+    void setSKIN(string s)
+    {
+        skin=s;
+    }
+    void setROF(int r)
+    {
+        ROF=r;
+    }
+    void setDMG(int d)
+    {
+        dmg=d;
+    }
 
-}
+    void pisiTxt(string nazivFajla, char mode='a')
+    {
+        ofstream fajl;
+
+        if (mode=='a')
+        {
+            fajl.open (nazivFajla, ios_base::app);
+        }
+        else
+        {
+            fajl.open (nazivFajla);
+        }
+
+        fajl << name<<","<< magSize<<","<<ammo<<","<<ROF<<","<<dmg<<","<<magnification<<","<<skin << endl;
+
+        fajl.close();
+
+    }
+
+    void citajTxt(string nazivFajla)
+    {
+        string linija;
+        ifstream fajl (nazivFajla);
+        if (fajl.is_open())
+        {
+            while ( getline (fajl,linija) )
+            {
+                cout << linija << '\n';
+            }
+            fajl.close();
+        }
+
+        else
+            cout << "Neuspesno otvoren fajl";
+
+    }
+    void writeSecondary ()
+    {
+        std::cout << name << std::endl;
+        std::cout << magSize << std::endl;
+        std::cout << magnification << std::endl;
+        std::cout << skin << std::endl;
+        std::cout << ammo << std::endl;
+        std::cout << ROF << std::endl;
+        std::cout << dmg << std::endl;
+    }
+    friend std::ostream& operator<<(std::ostream& izlaz, const Secondary& sec1);
 };
 
 

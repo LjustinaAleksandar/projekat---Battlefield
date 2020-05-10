@@ -35,6 +35,6 @@ class Soilder{
         }
         void writeSoilderCount(){std::cout << soilderCount <<std::endl;}
 };
-
+int Soilder::soilderCount=0;
 
 #endif // SOILDER_HPP_INCLUDED

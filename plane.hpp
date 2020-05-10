@@ -53,11 +53,12 @@ class Plane{
                         break;
                 case 3: std::cout << "tankBombs" << std::endl;
                         break;
-                }
+                }}
 
-
+            friend std::ostream& operator<<(std::ostream& izlaz, const Plane& plane1);
 };
-friend std::ostream& operator<<(std::ostream& izlaz, const Plane& plane1);
+
+
 
 
 #endif // PLANE_HPP_INCLUDED
