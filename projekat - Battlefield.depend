@@ -1,10 +1,10 @@
 # depslib dependency file v1.0
-1589656693 source:c:\users\sale secerko\onedrive\desktop\projekat - battlefield\main.cpp
+1589668978 source:c:\users\sale secerko\onedrive\desktop\projekat - battlefield\main.cpp
 	<iostream>
 	<fstream>
 	"battle.hpp"
 	"secondary.hpp"
-	"soilder.hpp"
+	"soldier.hpp"
 
 1589133814 c:\users\sale secerko\onedrive\desktop\projekat - battlefield\battle.hpp
 	<iostream>
@@ -16,17 +16,18 @@
 	"tanker.hpp"
 	"pilot.hpp"
 
-1589667042 c:\users\sale secerko\onedrive\desktop\projekat - battlefield\squad.hpp
+1589668438 c:\users\sale secerko\onedrive\desktop\projekat - battlefield\squad.hpp
 	<iostream>
 	"assault.hpp"
 	"medic.hpp"
 	"support.hpp"
 	"recon.hpp"
+	"soldier.hpp"
 	<vector>
 
-1589667042 c:\users\sale secerko\onedrive\desktop\projekat - battlefield\assault.hpp
+1589668620 c:\users\sale secerko\onedrive\desktop\projekat - battlefield\assault.hpp
 	<iostream>
-	"soilder.hpp"
+	"soldier.hpp"
 
 1589656407 c:\users\sale secerko\onedrive\desktop\projekat - battlefield\primary.hpp
 	<iostream>
@@ -38,22 +39,22 @@
 	<fstream>
 	<cstdlib>
 
-1589664518 c:\users\sale secerko\onedrive\desktop\projekat - battlefield\medic.hpp
+1589668639 c:\users\sale secerko\onedrive\desktop\projekat - battlefield\medic.hpp
 	<iostream>
-	"soilder.hpp"
+	"soldier.hpp"
 
-1589664518 c:\users\sale secerko\onedrive\desktop\projekat - battlefield\support.hpp
+1589668657 c:\users\sale secerko\onedrive\desktop\projekat - battlefield\support.hpp
 	<iostream>
-	"soilder.hpp"
+	"soldier.hpp"
 
-1589667126 c:\users\sale secerko\onedrive\desktop\projekat - battlefield\soilder.hpp
+1589668243 c:\users\sale secerko\onedrive\desktop\projekat - battlefield\soilder.hpp
 	<iostream>
 	"primary.hpp"
 	"secondary.hpp"
 
-1589664518 c:\users\sale secerko\onedrive\desktop\projekat - battlefield\recon.hpp
+1589668677 c:\users\sale secerko\onedrive\desktop\projekat - battlefield\recon.hpp
 	<iostream>
-	"soilder.hpp"
+	"soldier.hpp"
 
 1589133814 c:\users\sale secerko\onedrive\desktop\projekat - battlefield\tanker.hpp
 	<iostream>
@@ -72,4 +73,9 @@
 
 1589136790 c:\users\sale secerko\onedrive\desktop\projekat - battlefield\plane.hpp
 	<iostream>
+
+1589668480 c:\users\sale secerko\onedrive\desktop\projekat - battlefield\soldier.hpp
+	<iostream>
+	"primary.hpp"
+	"secondary.hpp"
 

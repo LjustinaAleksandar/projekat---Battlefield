@@ -1,45 +1,45 @@
-#ifndef SOILDER_HPP_INCLUDED
-#define SOILDER_HPP_INCLUDED
+#ifndef Soldier_HPP_INCLUDED
+#define Soldier_HPP_INCLUDED
 #include <iostream>
 #include "primary.hpp"
 #include "secondary.hpp"
 
 enum GRENADE{frag,gas,impact,incendinary,smoke,mini,lightAT,improvised};
-class Soilder{
+class Soldier{
     protected:
         string name;
         string armyRank;
         Primary weapon1;
         Secondary weapon2;
         GRENADE grenade;
-        static int soilderCount;
+        static int SoldierCount;
     public:
-        Soilder(): weapon1(0, "", trench, 1, 1.0, "", false, single, 1, 1), weapon2(0, "", 1, 1.0, "", 1, 1){
+        Soldier(): weapon1(0, "", trench, 1, 1.0, "", false, single, 1, 1), weapon2(0, "", 1, 1.0, "", 1, 1){
         name="";
         armyRank="";
         grenade=frag;
         }
-        Soilder(string nam, string rnk, GRENADE grn, const Primary &prim1, const Secondary &sec1): weapon1(prim1),weapon2(sec1)
+        Soldier(string nam, string rnk, GRENADE grn, const Primary &prim1, const Secondary &sec1): weapon1(prim1),weapon2(sec1)
         {
         name=nam;
         armyRank=rnk;
         grenade=grn;
-        {soilderCount++;}
+        {SoldierCount++;}
         }
         string getNAME() const{return name;}
-        Soilder(const Soilder& s1){
+        Soldier(const Soldier& s1){
         name=s1.name;
         armyRank=s1.armyRank;
         weapon1=s1.weapon1;
         weapon2=s1.weapon2;
         grenade=s1.grenade;
         }
-        void writeSoilderCount(){std::cout << soilderCount <<std::endl;}
+        void writeSoldierCount(){std::cout << SoldierCount <<std::endl;}
 
-        ~Soilder(){
-        soilderCount--;
+        ~Soldier(){
+        SoldierCount--;
         }
-        virtual void writeSoilder(){
+        virtual void writeSoldier(){
         std::cout << "name:"<< name << std::endl;
         std::cout << "rank:"<< armyRank << std::endl;
         std::cout << "equiped grenade:"<< grenade << std::endl;
@@ -47,6 +47,6 @@ class Soilder{
         weapon2.writeSecondary();
         }
 };
-int Soilder::soilderCount=0;
+int Soldier::SoldierCount=0;
 
-#endif // SOILDER_HPP_INCLUDED
+#endif // Soldier_HPP_INCLUDED

@@ -1,16 +1,16 @@
 #ifndef ASSAULT_HPP_INCLUDED
 #define ASSAULT_HPP_INCLUDED
 #include <iostream>
-#include "soilder.hpp"
+#include "soldier.hpp"
 
-class Assault: public Soilder{
+class Assault: public Soldier{
     private:
         string gadget1;
         string gadget2;
         bool antiTank;
         bool antiInfantry;
     public:
-        Assault(string nam, string rnk, GRENADE grn, const Primary &prim1, const Secondary &sec1, string g1, string g2, bool AT, bool AI): Soilder(nam, rnk, grn, prim1, sec1){
+        Assault(string nam, string rnk, GRENADE grn, const Primary &prim1, const Secondary &sec1, string g1, string g2, bool AT, bool AI): Soldier(nam, rnk, grn, prim1, sec1){
             gadget1=g1;
             gadget2=g2;
             antiTank=AT;
@@ -23,15 +23,15 @@ class Assault: public Soilder{
         antiInfantry=a1.antiInfantry;
         }
 
-        void writeSoilder(){
-            Soilder::writeSoilder();
+        void writeSoldier(){
+            Soldier::writeSoldier();
             std::cout << "gadget 1:"<< name << std::endl;
             std::cout << "gadget 2:"<< armyRank << std::endl;
             if(antiTank)cout<<"I can destroy tanks"<<endl;
             if(antiInfantry)cout<<"I can kill a lot of enemy soldiers with my explosives"<<endl;
         }
         virtual void infoAssault(){
-            Soilder::writeSoilder();
+            Soldier::writeSoldier();
             std::cout << "gadget 1:"<< name << std::endl;
             std::cout << "gadget 2:"<< armyRank << std::endl;
             std::cout << "specializations: ";

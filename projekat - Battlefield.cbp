@@ -43,7 +43,7 @@
 		<Unit filename="recon.hpp" />
 		<Unit filename="secondary.hpp" />
 		<Unit filename="secondary1.txt" />
-		<Unit filename="soilder.hpp" />
+		<Unit filename="soldier.hpp" />
 		<Unit filename="squad.hpp" />
 		<Unit filename="support.hpp" />
 		<Unit filename="tank.hpp" />

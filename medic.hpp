@@ -1,9 +1,9 @@
 #ifndef MEDIC_HPP_INCLUDED
 #define MEDIC_HPP_INCLUDED
 #include <iostream>
-#include "soilder.hpp"
+#include "soldier.hpp"
 
-class Medic: public Soilder{
+class Medic: public Soldier{
     private:
         string gadget1;
         string gadget2;
@@ -11,21 +11,21 @@ class Medic: public Soilder{
         bool combatMedic;
 
     public:
-        Medic(string nam, string rnk, GRENADE grn, const Primary prim1, const Secondary sec1, string g1, string g2, bool AT, bool AI): Soilder(nam, rnk, grn, prim1, sec1){
+        Medic(string nam, string rnk, GRENADE grn, const Primary prim1, const Secondary sec1, string g1, string g2, bool AT, bool AI): Soldier(nam, rnk, grn, prim1, sec1){
             gadget1=g1;
             gadget2=g2;
             healer=AT;
             combatMedic=AI;
         }
-        virtual void writeSoilder(){
-            Soilder::writeSoilder();
+        virtual void writeSoldier(){
+            Soldier::writeSoldier();
             std::cout << "gadget 1:"<< name << std::endl;
             std::cout << "gadget 2:"<< armyRank << std::endl;
             if(healer)cout<<"I can heal my comrades faster"<<endl;
             if(combatMedic)cout<<"I can heal myself and run faster"<<endl;
         }
         virtual void infoMedic(){
-            Soilder::writeSoilder();
+            Soldier::writeSoldier();
             std::cout << "gadget 1:"<< name << std::endl;
             std::cout << "gadget 2:"<< armyRank << std::endl;
             std::cout << "specializations: ";

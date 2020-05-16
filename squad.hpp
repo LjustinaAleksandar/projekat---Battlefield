@@ -5,33 +5,33 @@
 #include "medic.hpp"
 #include "support.hpp"
 #include "recon.hpp"
-#include "soilder.hpp"
+#include "soldier.hpp"
 #include <vector>
 
 class Squad{
     private:
         string name;
-        vector <Soilder*> soilders;
+        vector <Soldier*> Soldiers;
     public:
         Squad(string n){name=n;}
 
-        void enlistSoilder(Soilder* s){
-        soilders.push_back(s);
-        cout<<"A new soilder got enlisted!"<<endl;
+        void enlistSoldier(Soldier* s){
+        Soldiers.push_back(s);
+        cout<<"A new Soldier got enlisted!"<<endl;
         }
 
-        void enlistedSoilders(){
-        cout<<"in your squad there are these soilders: "<<endl;
+        void enlistedSoldiers(){
+        cout<<"in your squad there are these Soldiers: "<<endl;
 
-        for (auto it=soilders.begin(); it<soilders.end(); it++){
-            (*it)->writeSoilder();
+        for (auto it=Soldiers.begin(); it<Soldiers.end(); it++){
+            (*it)->writeSoldier();
             }
         }
 
-        bool removeSoilder(Soilder& a){
-        for (auto it=soilders.begin(); it<soilders.end(); it++){
+        bool removeSoldier(Soldier& a){
+        for (auto it=Soldiers.begin(); it<Soldiers.end(); it++){
             if (a.getNAME()==(*it)->getNAME()){
-                soilders.erase(it);
+                Soldiers.erase(it);
                 cout<<"you just removed a soldier from your squad"<<endl;
                 return true;
             }
@@ -42,8 +42,8 @@ class Squad{
         cout<<"name of this squad is: "<<name<<endl;
         cout<<"Soldiers in this squad are: "<<endl;
 
-        for (auto it=soilders.begin(); it<soilders.end(); it++){
-            (*it)->writeSoilder();
+        for (auto it=Soldiers.begin(); it<Soldiers.end(); it++){
+            (*it)->writeSoldier();
 
         }
     }

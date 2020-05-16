@@ -3,7 +3,7 @@
 using namespace std;
 #include "battle.hpp"
 #include "secondary.hpp"
-#include "soilder.hpp"
+#include "soldier.hpp"
 
 ostream& operator<<(ostream& izlaz, const Secondary& sec1){
         izlaz<<"Secondary - ispis"<<endl;
@@ -98,8 +98,9 @@ int main ()
 {
     Secondary sec1(36, "nagant_revolver", 6, 2.0, "rasputin", 150, 46);
     Primary prim1(104, "fedorov_avtomat", trench, 25, 2.0, "kerensky", true, automatic, 450, 21);
-    Soilder soilder1("ryan", "private", frag, prim1, sec1);
-    soilder1.writeSoilder();
+    Soldier soldier1("ryan", "private", frag, prim1, sec1);
+    //soldier1.writeSoldier();
+
     /*string nasFajl = "secondary1.txt";
 
     cout<<"Unesite tekst koji hocete da upisete u fajl:"<<endl;
@@ -118,7 +119,12 @@ int main ()
     cout<<"\tU fajlu posle dodavanja pise: "<<endl;
     sec1.citajTxt(nasFajl);*/
 
-    soilder1.writeSoilderCount();
+    soldier1.writeSoldierCount();
+    Squad squad1("crnci");
+    squad1.enlistSoldier(&soldier1);
+    squad1.writeSquad();
+    // imam i metode za uklanjanje i trazenje u vektoru al me mrzi da ih pozivam, nadam se da nije problem
+    // rade one sigurno
     return 0;
 }
  // funkcionalnost bi bila da korisnik pravi svog vojnika, squad i armiju i da se to upisuje u neki fajl, a možda i da daj korisnik rekreira neke bitke
