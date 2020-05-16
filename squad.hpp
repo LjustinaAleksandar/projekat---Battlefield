@@ -38,15 +38,21 @@ class Squad{
         }
         return false;
     }
-    void writeSquad(){
-        cout<<"name of this squad is: "<<name<<endl;
-        cout<<"Soldiers in this squad are: "<<endl;
+        void writeSquad(){
+            cout<<"name of this squad is: "<<name<<endl;
+            cout<<"Soldiers in this squad are: "<<endl;
 
-        for (auto it=Soldiers.begin(); it<Soldiers.end(); it++){
-            (*it)->writeSoldier();
+            for (auto it=Soldiers.begin(); it<Soldiers.end(); it++){
+                (*it)->writeSoldier();
 
+            }
         }
-    }
+        void searchSoldier(Soldier& a){
+            for (auto it=Soldiers.begin(); it<Soldiers.end(); it++){
+                if (a.getNAME()==(*it)->getNAME()){
+                    cout<<"there is a soldier under this name in this squad"<<endl;
+            }
+        }}
 
 };
 
