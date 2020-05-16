@@ -100,6 +100,19 @@ class Primary{
                 magSize=a;
             }
         }
+        void writePrimary ()
+    {
+        std::cout << name << std::endl;
+        std::cout << magSize << std::endl;
+        std::cout << magnification << std::endl;
+        std::cout << skin << std::endl;
+        std::cout << ammo << std::endl;
+        std::cout << ROF << std::endl;
+        std::cout << dmg << std::endl;
+        std::cout << type << std::endl;
+        std::cout << bayonet << std::endl;
+        std::cout << fMod << std::endl;
+    }
 };
 
 #endif // PRIMARY_H_INCLUDED

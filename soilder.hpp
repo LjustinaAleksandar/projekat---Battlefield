@@ -26,6 +26,7 @@ class Soilder{
         grenade=grn;
         {soilderCount++;}
         }
+        string getNAME() const{return name;}
         Soilder(const Soilder& s1){
         name=s1.name;
         armyRank=s1.armyRank;
@@ -34,6 +35,17 @@ class Soilder{
         grenade=s1.grenade;
         }
         void writeSoilderCount(){std::cout << soilderCount <<std::endl;}
+
+        ~Soilder(){
+        soilderCount--;
+        }
+        virtual void writeSoilder(){
+        std::cout << "name:"<< name << std::endl;
+        std::cout << "rank:"<< armyRank << std::endl;
+        std::cout << "equiped grenade:"<< grenade << std::endl;
+        weapon1.writePrimary();
+        weapon2.writeSecondary();
+        }
 };
 int Soilder::soilderCount=0;
 

@@ -16,6 +16,21 @@ class Support: public Soilder{
             engineer=AT;
             gunner=AI;
         }
+        virtual void writeSoilder(){
+            Soilder::writeSoilder();
+            std::cout << "gadget 1:"<< name << std::endl;
+            std::cout << "gadget 2:"<< armyRank << std::endl;
+            if(engineer)cout<<"I can repair vehicles"<<endl;
+            if(gunner)cout<<"I have a fast-fireing machine gun to supress enemies"<<endl;
+        }
+        virtual void infoSupport(){
+            Soilder::writeSoilder();
+            std::cout << "gadget 1:"<< name << std::endl;
+            std::cout << "gadget 2:"<< armyRank << std::endl;
+            std::cout << "specializations: ";
+            if(engineer)cout<<"engineer";
+            if(gunner)cout<<"gunner"<< std::endl;
+        }
 
 };
 

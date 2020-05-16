@@ -16,6 +16,21 @@ class Recon: public Soilder{
             sniper=AT;
             pathfinder=AI;
         }
+        virtual void writeSoilder(){
+            Soilder::writeSoilder();
+            std::cout << "gadget 1:"<< name << std::endl;
+            std::cout << "gadget 2:"<< armyRank << std::endl;
+            if(sniper)cout<<"I have a scope and I can hit targets that are very far"<<endl;
+            if(pathfinder)cout<<"I can put down a spawn beacon for my comrades"<<endl;
+        }
+        virtual void infoRecon(){
+            Soilder::writeSoilder();
+            std::cout << "gadget 1:"<< name << std::endl;
+            std::cout << "gadget 2:"<< armyRank << std::endl;
+            std::cout << "specializations: ";
+            if(sniper)cout<<"sniper";
+            if(pathfinder)cout<<"pathfinder"<< std::endl;
+        }
 };
 
 
