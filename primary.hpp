@@ -112,6 +112,7 @@ class Primary{
         std::cout << type << std::endl;
         std::cout << bayonet << std::endl;
         std::cout << fMod << std::endl;
+
     }
 };
 
