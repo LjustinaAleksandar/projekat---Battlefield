@@ -151,6 +151,21 @@ public:
         std::cout << dmg << std::endl;
     }
     friend std::ostream& operator<<(std::ostream& izlaz, const Secondary& sec1);
+    void pisiSecondary(char mode='r')
+    {
+        ofstream fajl;
+
+        if (mode=='a')
+        {
+            fajl.open ("secondary1.txt", ios_base::app);
+        }
+        else
+        {
+            fajl.open ("secondary1.txt");
+        }
+        fajl<< name<< "|"<<magSize<<"|"<<magnification<<"|" <<skin<<"|" <<ammo<<"|" <<ROF<<"|"<<dmg <<endl;
+        fajl.close();
+    }
 };
 
 

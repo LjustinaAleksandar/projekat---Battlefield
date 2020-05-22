@@ -46,6 +46,19 @@ class Soldier{
         weapon1.writePrimary();
         weapon2.writeSecondary();
         }
+        void pisiSoldier(char mode='r')
+    {
+        ofstream fajl;
+
+        if (mode=='a'){
+            fajl.open ("soldier1.txt", ios_base::app);
+        }
+        else{
+            fajl.open ("soldier1.txt");
+        }
+        fajl<< name<< "|"<<armyRank<<"|"<<weapon1.getNAME()<<"|" <<weapon2.getNAME()<<"|" <<grenade<<"|" <<SoldierCount <<endl;
+        fajl.close();
+    }
 };
 int Soldier::SoldierCount=0;
 

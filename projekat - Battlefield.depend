@@ -1,7 +1,8 @@
 # depslib dependency file v1.0
-1589669128 source:c:\users\sale secerko\onedrive\desktop\projekat - battlefield\main.cpp
+1590186753 source:c:\users\sale secerko\onedrive\desktop\projekat - battlefield\main.cpp
 	<iostream>
 	<fstream>
+	<math.h>
 	"battle.hpp"
 	"secondary.hpp"
 	"soldier.hpp"
@@ -29,12 +30,12 @@
 	<iostream>
 	"soldier.hpp"
 
-1589656407 c:\users\sale secerko\onedrive\desktop\projekat - battlefield\primary.hpp
+1590185103 c:\users\sale secerko\onedrive\desktop\projekat - battlefield\primary.hpp
 	<iostream>
 	<stdlib.h>
 	<windows.h>
 
-1589655759 c:\users\sale secerko\onedrive\desktop\projekat - battlefield\secondary.hpp
+1590185103 c:\users\sale secerko\onedrive\desktop\projekat - battlefield\secondary.hpp
 	<iostream>
 	<fstream>
 	<cstdlib>
@@ -74,7 +75,7 @@
 1589136790 c:\users\sale secerko\onedrive\desktop\projekat - battlefield\plane.hpp
 	<iostream>
 
-1589668480 c:\users\sale secerko\onedrive\desktop\projekat - battlefield\soldier.hpp
+1590186798 c:\users\sale secerko\onedrive\desktop\projekat - battlefield\soldier.hpp
 	<iostream>
 	"primary.hpp"
 	"secondary.hpp"

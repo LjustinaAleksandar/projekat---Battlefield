@@ -40,10 +40,14 @@
 		<Unit filename="pilot.hpp" />
 		<Unit filename="plane.hpp" />
 		<Unit filename="primary.hpp" />
+		<Unit filename="primary1.txt" />
 		<Unit filename="recon.hpp" />
 		<Unit filename="secondary.hpp" />
 		<Unit filename="secondary1.txt" />
 		<Unit filename="soldier.hpp" />
+		<Unit filename="soldier1.txt">
+			<Option target="&lt;{~None~}&gt;" />
+		</Unit>
 		<Unit filename="squad.hpp" />
 		<Unit filename="support.hpp" />
 		<Unit filename="tank.hpp" />

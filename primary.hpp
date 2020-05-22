@@ -114,6 +114,19 @@ class Primary{
         std::cout << fMod << std::endl;
 
     }
+    void pisiPrimary(char mode='r')
+    {
+        ofstream fajl;
+
+        if (mode=='a'){
+            fajl.open ("primary1.txt", ios_base::app);
+        }
+        else{
+            fajl.open ("primary1.txt");
+        }
+        fajl<< name <<"|"<< magSize <<"|"<< magnification<<"|" <<skin<<"|"<<ammo<<"|"<<ROF<<"|"<<dmg<<"|"<<type<<"|"<<bayonet<<"|"<<fMod <<endl;
+        fajl.close();
+    }
 };
 
 #endif // PRIMARY_H_INCLUDED

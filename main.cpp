@@ -5,7 +5,41 @@ using namespace std;
 #include "battle.hpp"
 #include "secondary.hpp"
 #include "soldier.hpp"
+TYPE promeniUEnumtip(int a)
+{
+    switch(a)
+    {
+    case 0: return trench;
+    case 1: return storm;
+    case 2: return factory;
+    case 3: return lowWeight;
+    case 4: return sniper;
 
+    }
+}
+FIREMOD promeniUENnumfiremod(int a)
+{
+    switch(a)
+    {
+    case 0: return single;
+    case 1: return burst;
+    case 2: return automatic;
+    }
+}
+GRENADE promeniUEnumgrenade(int a)
+{
+    switch(a)
+    {
+    case 0: return frag;
+    case 1: return gas;
+    case 2: return impact;
+    case 3: return incendinary;
+    case 4: return smoke;
+    case 5: return mini;
+    case 6: return lightAT;
+    case 7: return improvised;
+    }
+}
 ostream& operator<<(ostream& izlaz, const Secondary& sec1)
 {
     izlaz<<"Secondary - ispis"<<endl;
@@ -132,14 +166,23 @@ ostream& operator<<(ostream& izlaz, const Tank& tank1)
     return izlaz;
 }
 
-int createWeapon1(){
-        int v1; int a; string n; int t; int mag; float m; string s; bool b; int f; int r; int d;
+Primary createWeapon1(){
+        int a;
+        string n;
+        int t;
+        int mag;
+        float m;
+        string s;
+        bool b;
+        int f;
+        int r;
+        int d;
         cout<<"What is the name of your weapon?"<<endl;
         cin>>n;
         cout<<"How big of a magazine does your weapon have? (please pick a reasonable number)"<<endl;
         do{
             cin>>mag;
-        }while(mag<101 && mag>0);
+        }while(mag<0 && m>101);
         cout<<"How much ammo does your weapon have available? (please pick a reasonable amount)"<<endl;
         do{
             cin>>a;
@@ -149,7 +192,7 @@ int createWeapon1(){
         cout<<"What magnification does your weapon have?(magnification can me min 1x and max 2x)"<<endl;
         do{
             cin>>m;
-        }while(m<2.1 && mag>0.9);
+        }while(m>2.1 && mag<0.9);
         cout<<"skins are coming soon"<<endl;
         s="";
         cout<<"Would you like your weapon to have bayonet?"<<endl;
@@ -166,10 +209,62 @@ int createWeapon1(){
             d=rand()%10+rand()%10+25;
         }else{d=rand()%5;}
         v1=(d*mag*a)/1000+rand()%10;
-        Primary prim1(a,  n,  t,  mag,  m,  s,  b,  f,  r,  d);
-        return v1;
+        Primary prim1(a,  n,  promeniUEnumtip(t),  mag,  m,  s,  b,  promeniUENnumfiremod(f),  r,  d);
+        prim1.pisiPrimary('a');
+        return prim1;
 }
-
+Secondary createWeapon2()
+{
+        string n;
+        int mag;
+        int a;
+        int r;
+        float f;
+        int d;
+        string s;
+        cout<<"What is the name of your weapon?"<<endl;
+        cin>>n;
+        cout<<"How big of a magazine does your weapon have? (please pick a reasonable number)"<<endl;
+        do{
+            cin>>mag;
+        }while(mag<0 && mag>101);
+        cout<<"How much ammo does your weapon have available? (please pick a reasonable amount)"<<endl;
+        do{
+            cin>>a;
+        }while(a<5*mag && a>4*mag);
+        cout<<"What magnification does your weapon have?(magnification can me min 1x and max 2x)"<<endl;
+        do{
+            cin>>f;
+        }while(mag>2.1 && mag<0.9);
+        cout<<"skins are coming soon"<<endl;
+        s="";
+        cout<<"What is the rate of fire of your weapon?"<<endl;
+        do{
+            cin>>r;
+        }while((mag<r*10 || mag>r*10) && r<1000);
+        if(mag<10){
+            d=rand()%10+90;
+        }else if(mag<31 && mag>9){
+            d=rand()%10+rand()%10+25;
+        }else{d=rand()%5;}
+        Secondary sec1(a,n,mag,f,s,r,d);
+        sec1.pisiSecondary('a');
+        return sec1;
+}
+Soldier napraviVojnika(Primary prim,Secondary sec)
+{
+    string n;
+    cout<<"Please enter your name: ";
+    cin>>n;
+    string arRank;
+    cout<<"Enter your army rank: ";
+    cin>>arRank;
+    int gr;
+    cout<<"Choose grenade: ";
+    cin>>gr;
+    Soldier sl(n,arRank,promeniUEnumgrenade(gr),prim,sec);
+    return sl;
+}
 int main ()
 {
     /*Secondary sec1(36, "nagant_revolver", 6, 2.0, "rasputin", 150, 46);
@@ -181,20 +276,6 @@ int main ()
 
     cout<<"Unesite tekst koji hocete da upisete u fajl:"<<endl;
 
-
-    string ulaz;
-    getline(cin,ulaz);
-    sec1.pisiTxt(nasFajl);
-
-    cout<<"\tU fajlu pise: "<<endl;
-    sec1.citajTxt(nasFajl);
-    cout<<endl<<endl;
-
-    string recenica="Ovo cemo dodati u poslednji red fajla...";
-    sec1.pisiTxt(nasFajl, 'a');
-    cout<<"\tU fajlu posle dodavanja pise: "<<endl;
-    sec1.citajTxt(nasFajl);*/
-
     /*soldier1.writeSoldierCount();
     Squad squad1("crnci");
     squad1.enlistSoldier(&soldier1);
@@ -203,10 +284,23 @@ int main ()
     cout<<"Welcome to Battlefield one"<<endl;
     cout<<"In this game you are able to simulate battles from world war 1"<<endl;
     cout<<"First thing you will need to do is to create a weapon"<<endl;
-    createWeapon1();
+    Primary prim=createWeapon1();
     cout<<"if you want to continue press 1, if you want to create another weapon press 2"<<endl;
     int x;
-
+    cin>>x;
+    if(x==2)
+    {
+        Primary prim1=createWeapon1();
+    }
+    else{cout<<"now you should create a secondary weapon or a pistol"<<endl;
+    Secondary sec=createWeapon2();
+    cout<<"if you want to continue press 1, if you want to create another secondary weapon press 2"<<endl;
+    int x;
+    cin>>x;
+    if(x==2)
+    {
+        Secondary sec=createWeapon2();
+    }}
     return 0;
 }
-// funkcionalnost bi bila da korisnik pravi svog vojnika, squad i armiju i da se to upisuje u neki fajl, a možda i da daj korisnik rekreira neke bitke
+// funkcionalnost bi bila da korisnik pravi svog vojnika, squad i armiju i da se to upisuje u neki fajl, a MOŽDA i da daj korisnik rekreira neke bitke
