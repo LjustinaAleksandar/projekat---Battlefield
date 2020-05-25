@@ -23,6 +23,15 @@ class Tank{
             weapon1=wpn1;
             weapon2=wpn2;
         }
+        Tank(const Tank& tnk1){
+            name=tnk1.name;
+            seats=tnk1.seats;
+            skin=tnk1.skin;
+            smoke=tnk1.smoke;
+            type=tnk1.type;
+            weapon1=tnk1.weapon1;
+            weapon2=tnk1.weapon2;
+        }
         void writeTank (){
             std::cout << name << std::endl;
             std::cout << seats << std::endl;

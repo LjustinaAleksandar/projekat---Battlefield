@@ -12,13 +12,21 @@ class Plane{
         planeWPN weapon1;
         planeWPN weapon2;
     public:
-        Plane(string n, int seat, string s, planeTYP t, planeWPN wpn1, planeWPN wpn2){
+        Plane(string n, string s, int seat, planeTYP t, planeWPN wpn1, planeWPN wpn2){
             name=n;
             seats=seat;
             skin=s;
             type=t;
             weapon1=wpn1;
             weapon2=wpn2;
+        }
+        Plane(const Plane& plan1){
+            name=plan1.name;
+            seats=plan1.seats;
+            skin=plan1.skin;
+            type=plan1.type;
+            weapon1=plan1.weapon1;
+            weapon2=plan1.weapon2;
         }
         void writePlane (){
             std::cout << name << std::endl;

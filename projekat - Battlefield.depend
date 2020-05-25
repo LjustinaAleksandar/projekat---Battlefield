@@ -1,5 +1,5 @@
 # depslib dependency file v1.0
-1590186753 source:c:\users\sale secerko\onedrive\desktop\projekat - battlefield\main.cpp
+1590448555 source:c:\users\sale secerko\onedrive\desktop\projekat - battlefield\main.cpp
 	<iostream>
 	<fstream>
 	<math.h>
@@ -7,17 +7,17 @@
 	"secondary.hpp"
 	"soldier.hpp"
 
-1589133814 c:\users\sale secerko\onedrive\desktop\projekat - battlefield\battle.hpp
+1590448580 c:\users\sale secerko\onedrive\desktop\projekat - battlefield\battle.hpp
 	<iostream>
 	"army.hpp"
 
-1589133814 c:\users\sale secerko\onedrive\desktop\projekat - battlefield\army.hpp
+1590448556 c:\users\sale secerko\onedrive\desktop\projekat - battlefield\army.hpp
 	<iostream>
 	"squad.hpp"
 	"tanker.hpp"
 	"pilot.hpp"
 
-1589669811 c:\users\sale secerko\onedrive\desktop\projekat - battlefield\squad.hpp
+1590445350 c:\users\sale secerko\onedrive\desktop\projekat - battlefield\squad.hpp
 	<iostream>
 	"assault.hpp"
 	"medic.hpp"
@@ -57,22 +57,22 @@
 	<iostream>
 	"soldier.hpp"
 
-1589133814 c:\users\sale secerko\onedrive\desktop\projekat - battlefield\tanker.hpp
+1590446362 c:\users\sale secerko\onedrive\desktop\projekat - battlefield\tanker.hpp
 	<iostream>
 	"primary.hpp"
 	"secondary.hpp"
 	"tank.hpp"
 
-1589136790 c:\users\sale secerko\onedrive\desktop\projekat - battlefield\tank.hpp
+1590442791 c:\users\sale secerko\onedrive\desktop\projekat - battlefield\tank.hpp
 	<iostream>
 
-1589135034 c:\users\sale secerko\onedrive\desktop\projekat - battlefield\pilot.hpp
+1590447639 c:\users\sale secerko\onedrive\desktop\projekat - battlefield\pilot.hpp
 	<iostream>
 	"primary.hpp"
 	"secondary.hpp"
 	"plane.hpp"
 
-1589136790 c:\users\sale secerko\onedrive\desktop\projekat - battlefield\plane.hpp
+1590442532 c:\users\sale secerko\onedrive\desktop\projekat - battlefield\plane.hpp
 	<iostream>
 
 1590186798 c:\users\sale secerko\onedrive\desktop\projekat - battlefield\soldier.hpp

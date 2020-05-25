@@ -1,12 +1,68 @@
 #include <iostream>
 #include <fstream>
 #include <math.h>
+#include <stdlib.h>
 using namespace std;
 #include "battle.hpp"
 #include "secondary.hpp"
 #include "soldier.hpp"
-TYPE promeniUEnumtip(int a)
-{
+COUNTRIES promeniATK(int a){
+    switch(a)
+    {
+    case 0: return Germany;
+    case 1: return AustriaHungary;
+    case 2: return Turkey;
+    }
+}
+COUNTRIES promeniDEF(int a){
+    switch(a)
+    {
+    case 0: return France;
+    case 1: return UnitedKingdom;
+    case 2: return Russia;
+    case 3: return Italy;
+    case 4: return USA;
+    }
+}
+planeWPN promeniPlaneWPN(int a){
+    switch(a)
+    {
+    case 0: return rockets;
+    case 1: return machinegun;
+    case 2: return infantryBombs;
+    case 3: return tankBombs;
+    }
+}
+planeTYP promeniPlanekTYP(int a){
+    switch(a)
+    {
+    case 0: return attack;
+    case 1: return bomber;
+    case 2: return fighter;
+    case 3: return heavy;
+    }
+}
+tankTYP promeniTankTYP(int a){
+    switch(a)
+    {
+    case 0: return landship;
+    case 1: return AttackTank;
+    case 2: return LightTank;
+    case 3: return PutilovGraford;
+    case 4: return ArtyTruck;
+    case 5: return HeavyTank;
+    }
+}
+tankWPN promeniTankWPN(int a){
+    switch(a)
+    {
+    case 0: return antiInfantry;
+    case 1: return antiTank;
+    case 2: return antiAir;
+    case 3: return mortar;
+    }
+}
+TYPE promeniUEnumtip(int a){
     switch(a)
     {
     case 0: return trench;
@@ -17,8 +73,7 @@ TYPE promeniUEnumtip(int a)
 
     }
 }
-FIREMOD promeniUENnumfiremod(int a)
-{
+FIREMOD promeniUENnumfiremod(int a){
     switch(a)
     {
     case 0: return single;
@@ -26,8 +81,7 @@ FIREMOD promeniUENnumfiremod(int a)
     case 2: return automatic;
     }
 }
-GRENADE promeniUEnumgrenade(int a)
-{
+GRENADE promeniUEnumgrenade(int a){
     switch(a)
     {
     case 0: return frag;
@@ -165,8 +219,57 @@ ostream& operator<<(ostream& izlaz, const Tank& tank1)
     }
     return izlaz;
 }
-
-Primary createWeapon1(){
+Plane createPlane()
+{
+        string n;
+        string s;
+        int seat;
+        int t;
+        int wpn1;
+        int wpn2;
+        cout<<"What is the name of your plane?"<<endl;
+        cin>>n;
+        cout<<"How many seats are in your plane?(World War 1 planes did not have more than 4 seats)"<<endl;
+        do{cin>>seat;}while(seat<1 && seat>4);
+        cout<<"What is the type of your tank?(you can choose 0-attack, 1-bomber, 2-fighter, 3-heavy)"<<endl;
+        cin>>t;
+        cout<<"skins are coming soon"<<endl;
+        s="";
+        cout<<"What primary weapon does your plane have?(0-rockets, 1-machinegun, 2-infantryBombs, 3-tankBombs)"<<endl;
+        cin>>wpn1;
+        cout<<"What secondary weapon does your plane have?(0-rockets, 1-machinegun, 2-infantryBombs, 3-tankBombs)"<<endl;
+        cin>>wpn2;
+        Plane plane1(n, s, seat, promeniPlanekTYP(t), promeniPlaneWPN(wpn1), promeniPlaneWPN(wpn2));
+        return plane1;
+}
+Tank createTank()
+{
+        string n;
+        string s;
+        int seat;
+        bool smk;
+        int t;
+        int wpn1;
+        int wpn2;
+        cout<<"What is the name of your tank?"<<endl;
+        cin>>n;
+        cout<<"How many seats are in your tank?(World War 1 tanks did not have more than 6 seats)"<<endl;
+        do{cin>>seat;}while(seat<1 && seat>6);
+        cout<<"What is the type of your tank?(you can choose 0-landship, 1-AttackTank, 2-LightTank, 3-PutilovGraford, 4-ArtyTruck, 5-HeavyTank)"<<endl;
+        cin>>t;
+        cout<<"skins are coming soon"<<endl;
+        s="";
+        cout<<"Would you like your tank to have deployable smoke?"<<endl;
+        cin>>smk;
+        cout<<"What primary weapon does your tank have?(0-antiInfantry, 1-antiTank, 2-antiAir, 3-mortar)"<<endl;
+        cin>>wpn1;
+        cout<<"What secondary weapon does your tank have?(0-antiInfantry, 1-antiTank, 2-antiAir, 3-mortar)"<<endl;
+        cin>>wpn2;
+        Tank tank1(n, s, seat, smk, promeniTankTYP(t), promeniTankWPN(wpn1), promeniTankWPN(wpn2));
+        return tank1;
+}
+Primary createWeapon1()
+{
         int a;
         string n;
         int t;
@@ -208,7 +311,6 @@ Primary createWeapon1(){
         }else if(mag<31 && mag>9){
             d=rand()%10+rand()%10+25;
         }else{d=rand()%5;}
-        v1=(d*mag*a)/1000+rand()%10;
         Primary prim1(a,  n,  promeniUEnumtip(t),  mag,  m,  s,  b,  promeniUENnumfiremod(f),  r,  d);
         prim1.pisiPrimary('a');
         return prim1;
@@ -265,6 +367,62 @@ Soldier napraviVojnika(Primary prim,Secondary sec)
     Soldier sl(n,arRank,promeniUEnumgrenade(gr),prim,sec);
     return sl;
 }
+Pilot CreatePilot(Primary prim,Secondary sec, Plane plan)
+{
+    string n;
+    string arRank;
+    string g1;
+    string g2;
+    cout<<"Please enter your name: ";
+    cin>>n;
+    cout<<"Enter your army rank: ";
+    cin>>arRank;
+    cout<<"gadgets are coming soon";
+    g1="";g2="";
+    Pilot pl(n,arRank,g1,g2,prim,sec,plan);
+    return pl;
+}
+Tanker CreateTanker(Primary prim,Secondary sec, Tank tnk)
+{
+    string n;
+    string arRank;
+    string g1;
+    string g2;
+    cout<<"Please enter your name: ";
+    cin>>n;
+    cout<<"Enter your army rank: ";
+    cin>>arRank;
+    cout<<"gadgets are coming soon";
+    g1="";g2="";
+    Tanker tl(n,arRank,g1,g2,prim,sec,tnk);
+    return tl;
+}
+Squad createSquad(){
+    int n;
+    cout<<"what is the name of your squad?"<<endl;
+    cin>>n;
+}
+Army createArmyATK(Squad squad1, Tanker tanker1, Pilot pilot1){
+    int x;
+    cout<<"Choose the attacking army(0-Germany, 1-Austria Hungary, 2-Turkey)"<<endl;
+    cin>>x;
+    Army a1(promeniATK(x),squad1, tanker1, pilot1);
+    return a1;
+}
+Army createArmyDEF(Squad squad1, Tanker tanker1, Pilot pilot1){
+    int x;
+    cout<<"Choose the defending army(0-France, 1-United Kingdom, 2-Russia, 3-Italy, 4-USA)"<<endl;
+    cin>>x;
+    Army a1(promeniATK(x),squad1, tanker1, pilot1);
+    return a1;
+}
+void createBattle(Army a1, Army a2){
+    if(a1.getCO()==Germany && a2.getCO()==UnitedKingdom){
+        string description="The Battle of Somme was the greatest battle of the First World War,\n it had more than a million warring soldiers thrown out of the line.\n British and French forces tried to break through German lines\n that stretched along a 40 km long front that ran north and south of the river Some in northern France.";
+        cout<<description<<endl;
+    }
+
+}
 int main ()
 {
     /*Secondary sec1(36, "nagant_revolver", 6, 2.0, "rasputin", 150, 46);
@@ -285,22 +443,128 @@ int main ()
     cout<<"In this game you are able to simulate battles from world war 1"<<endl;
     cout<<"First thing you will need to do is to create a weapon"<<endl;
     Primary prim=createWeapon1();
+    system("CLS");
     cout<<"if you want to continue press 1, if you want to create another weapon press 2"<<endl;
     int x;
     cin>>x;
-    if(x==2)
-    {
+    while(x==2){
         Primary prim1=createWeapon1();
+        system("CLS");
+        cout<<"if you want to continue press 1, if you want to create another weapon press 2"<<endl;
+        cin>>x;
     }
-    else{cout<<"now you should create a secondary weapon or a pistol"<<endl;
+    system("CLS");
+    cout<<"now you should create a secondary weapon or a pistol"<<endl;
     Secondary sec=createWeapon2();
+    system("CLS");
     cout<<"if you want to continue press 1, if you want to create another secondary weapon press 2"<<endl;
-    int x;
-    cin>>x;
-    if(x==2)
-    {
-        Secondary sec=createWeapon2();
-    }}
+    int y;
+    cin>>y;
+    while(y==2){
+        Secondary sec1=createWeapon2();
+        system("CLS");
+        cout<<"if you want to continue press 1, if you want to create another secondary weapon press 2"<<endl;
+        cin>>y;
+    }
+    system("CLS");
+    cout<<"your army could also use a tank and a plane, why don't you create few now"<<endl;
+    Tank tank0=createTank();
+    system("CLS");
+    Plane plane0=createPlane();
+    system("CLS");
+    cout<<"Now you should enlist some soldiers"<<endl;
+    cout<<"your soldiers will use weapons you previously created"<<endl;
+    Soldier soldier1=napraviVojnika(prim,sec);
+    system("CLS");
+    Soldier soldier2=napraviVojnika(prim,sec);
+    system("CLS");
+    Soldier soldier3=napraviVojnika(prim,sec);
+    system("CLS");
+    Soldier soldier4=napraviVojnika(prim,sec);
+    system("CLS");
+    cout<<"four soldiers is enough"<<endl;
+    cout<<"You could also enlist a pilot and a tanker for your vehicles"<<endl;
+    Pilot pilot1=CreatePilot(prim,sec, plane0);
+    system("CLS");
+    Tanker tanker1=CreateTanker(prim,sec, tank0);
+    system("CLS");
+    cout<<"Now you can group your soldiers in a squad"<<endl;
+    Squad squad1=createSquad();
+    system("CLS");
+    cout<<"We will just enlist those soldiers you created in your squad"<<endl;
+    squad1.enlistSoldier(&soldier1);
+    squad1.enlistSoldier(&soldier2);
+    squad1.enlistSoldier(&soldier3);
+    squad1.enlistSoldier(&soldier4);
+    cout<<"if you wish to see your squad press 1"<<endl;
+    int s;
+    cin>>s;
+    if(s==1){squad1.enlistedSoldiers();}
+    system("CLS");
+    cout<<"this is enough to create an army, but to battle you'll have to create another one\nwe'll just repeat the process"<<endl;
+
+    //-----------------------------------------------------------------------------------------------------------------------------------------------------
+
+    cout<<"First thing you will need to do is to create a weapon"<<endl;
+    Primary prim0=createWeapon1();
+    system("CLS");
+    cout<<"if you want to continue press 1, if you want to create another weapon press 2"<<endl;
+    int x0;
+    cin>>x0;
+    while(x0==2){
+        Primary prim10=createWeapon1();
+        system("CLS");
+        cout<<"if you want to continue press 1, if you want to create another weapon press 2"<<endl;
+        cin>>x;
+    }
+    system("CLS");
+    cout<<"now you should create a secondary weapon or a pistol"<<endl;
+    Secondary sec0=createWeapon2();
+    system("CLS");
+    cout<<"if you want to continue press 1, if you want to create another secondary weapon press 2"<<endl;
+    int y0;
+    cin>>y0;
+    while(y0==2){
+        Secondary sec10=createWeapon2();
+        system("CLS");
+        cout<<"if you want to continue press 1, if you want to create another secondary weapon press 2"<<endl;
+        cin>>y;
+    }
+    system("CLS");
+    cout<<"your army could also use a tank and a plane, why don't you create few now"<<endl;
+    Tank tank1=createTank();
+    system("CLS");
+    Plane plane1=createPlane();
+    system("CLS");
+    cout<<"Now you should enlist some soldiers"<<endl;
+    cout<<"your soldiers will use weapons you previously created"<<endl;
+    Soldier soldier10=napraviVojnika(prim0,sec0);system("CLS");
+    Soldier soldier20=napraviVojnika(prim0,sec0);system("CLS");
+    Soldier soldier30=napraviVojnika(prim0,sec0);system("CLS");
+    Soldier soldier40=napraviVojnika(prim0,sec0);system("CLS");
+    cout<<"four soldiers is enough"<<endl;
+    cout<<"You could also enlist a pilot and a tanker for yur vehicles"<<endl;
+    Pilot pilot10=CreatePilot(prim,sec, plane1);
+    system("CLS");
+    Tanker tanker10=CreateTanker(prim,sec, tank1);
+    system("CLS");
+    cout<<"Now you can group your soldiers in a squad"<<endl;
+    Squad squad10=createSquad();
+    system("CLS");
+    cout<<"We will just enlist those soldiers you created"<<endl;
+    squad10.enlistSoldier(&soldier10);
+    squad10.enlistSoldier(&soldier20);
+    squad10.enlistSoldier(&soldier30);
+    squad10.enlistSoldier(&soldier40);
+    system("CLS");
+    //----------------------------------------------------------------------------------------------------------------------------
+    cout<<"Great! You can simulate a battle now"<<endl;
+    cout<<"pick armies that will fight"<<endl;
+    Army army1=createArmyATK(squad1,tanker1, pilot1);
+    Army army2=createArmyDEF(squad10,tanker10, pilot10);
+    system("CLS");
+    createBattle(army1,army2);
+
     return 0;
 }
 // funkcionalnost bi bila da korisnik pravi svog vojnika, squad i armiju i da se to upisuje u neki fajl, a MOŽDA i da daj korisnik rekreira neke bitke

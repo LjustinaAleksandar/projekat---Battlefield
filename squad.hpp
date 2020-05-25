@@ -15,6 +15,11 @@ class Squad{
     public:
         Squad(string n){name=n;}
 
+        Squad(const Squad& squad1){
+            name=squad1.name;
+            Soldiers=squad1.Soldiers;
+        }
+
         void enlistSoldier(Soldier* s){
         Soldiers.push_back(s);
         cout<<"A new Soldier got enlisted!"<<endl;
