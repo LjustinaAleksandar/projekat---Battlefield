@@ -441,6 +441,9 @@ int main ()
 
     cout<<"Welcome to Battlefield one"<<endl;
     cout<<"In this game you are able to simulate battles from world war 1"<<endl;
+    cout<<"----------------------------------------------------------------------------------------------"<<endl;
+    cout<<"Please understand that this is just the beta version of the game\nand that it does not have as many features as a full game would, \nit also may be prone to bugs and glitches"<<endl;
+    cout<<"----------------------------------------------------------------------------------------------"<<endl;
     cout<<"First thing you will need to do is to create a weapon"<<endl;
     Primary prim=createWeapon1();
     system("CLS");
